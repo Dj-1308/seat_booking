@@ -18,8 +18,8 @@ import time
 
 
 # Replace these with your actual username and password
-username = "Phanindra.Vemuganti@synopsys.com"
-password = "Phani7@180020040"
+username = "deept@synopsys.com"
+password = "Deepanraj@13"
 
 # Replace this with the URL of the website you want to login to
 website_url = "https://ifazility.com/Optdesk/Account/Login"
@@ -71,8 +71,8 @@ submit_button = driver.find_element(By.ID, 'btnsearch')
 submit_button.click()
 #1041 1437 cubicl ws-151
 # Set the desired values for X1 and Y1
-new_x1_value = "1041"
-new_y1_value = "1437"
+new_x1_value = "1195"
+new_y1_value = "1585"
 x1_values = driver.find_element(By.ID, 'X1')
 y1_values = driver.find_element(By.ID, 'Y1')
 driver.execute_script("document.getElementById('X1').value = '{}'".format(new_x1_value))
