@@ -52,7 +52,7 @@ time.sleep(2)
 # Find the date field element by its ID
 state_date = driver.find_element(By.ID, 'searchfromdate')
 # Calculate tomorrow's date
-tomorrow = datetime.now() + timedelta(days=6)
+tomorrow = datetime.now() + timedelta(days=7)
 tomorrow_date = tomorrow.strftime('%m/%d/%Y')  # Format as MM/DD/YYYY
 # Update the value of the date field with tomorrow's date
 driver.execute_script("arguments[0].setAttribute('value', arguments[1])", state_date, tomorrow_date)
@@ -106,7 +106,7 @@ select_1.select_by_value("10:40:00")
 save_button = driver.find_element(By.XPATH, "//button[contains(@onclick, 'saveworkstation')]")
 # Click the "Save" button
 save_button.click()
-time.sleep(10)
+time.sleep(15)
 confirm_button = driver.find_element(By.XPATH, "//button[text()='Click to Confirm']")
 # Click the "Click to Confirm" button
 confirm_button.click()
