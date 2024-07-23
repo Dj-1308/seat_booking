@@ -52,7 +52,7 @@ time.sleep(2)
 # Find the date field element by its ID
 state_date = driver.find_element(By.ID, 'searchfromdate')
 # Calculate tomorrow's date
-tomorrow = datetime.now() + timedelta(days=7)
+tomorrow = datetime.now() + timedelta(days=6)
 tomorrow_date = tomorrow.strftime('%m/%d/%Y')  # Format as MM/DD/YYYY
 # Update the value of the date field with tomorrow's date
 driver.execute_script("arguments[0].setAttribute('value', arguments[1])", state_date, tomorrow_date)
