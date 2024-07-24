@@ -106,7 +106,9 @@ select_1.select_by_value("10:40:00")
 save_button = driver.find_element(By.XPATH, "//button[contains(@onclick, 'saveworkstation')]")
 # Click the "Save" button
 save_button.click()
-time.sleep(15)
+# Wait for the booking confirmation
+wait.until(EC.presence_of_element_located((By.ID, 'confirmationElement')))  # Example confirmation element ID
+time.sleep(5)
 confirm_button = driver.find_element(By.XPATH, "//button[text()='Click to Confirm']")
 # Click the "Click to Confirm" button
 confirm_button.click()
