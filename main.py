@@ -45,12 +45,10 @@ password_field.send_keys(password)
 password_field.send_keys(Keys.RETURN)
 
 # Wait for a few seconds to let the page load
-wait.until(EC.url_changes('https://ifazility.com/Optdesk/Account/Login'))
 time.sleep(2)
 booking_url = "https://ifazility.com/optdesk/Admin/WorkStationBook"
 driver.get(booking_url)
 # Wait for a few seconds to let the page load
-wait.until(EC.url_changes('https://ifazility.com/optdesk/Admin/WorkStationBook'))
 time.sleep(2)
 # Find the date field element by its ID
 state_date = driver.find_element(By.ID, 'searchfromdate')
@@ -109,7 +107,7 @@ select_1.select_by_value("10:40:00")
 save_button = driver.find_element(By.XPATH, "//button[contains(@onclick, 'saveworkstation')]")
 # Click the "Save" button
 save_button.click()
-time.sleep(5)
+time.sleep(10)
 confirm_button = driver.find_element(By.XPATH, "//button[text()='Click to Confirm']")
 # Click the "Click to Confirm" button
 confirm_button.click()
