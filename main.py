@@ -11,6 +11,7 @@ from datetime import datetime, timedelta
 from selenium.webdriver.common.keys import Keys
 #from selenium.webdriver.chrome.service import Service as ChromeService
 #from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
@@ -44,10 +45,12 @@ password_field.send_keys(password)
 password_field.send_keys(Keys.RETURN)
 
 # Wait for a few seconds to let the page load
+wait.until(EC.url_changes('https://ifazility.com/Optdesk/Account/Login'))
 time.sleep(2)
 booking_url = "https://ifazility.com/optdesk/Admin/WorkStationBook"
 driver.get(booking_url)
 # Wait for a few seconds to let the page load
+wait.until(EC.url_changes('https://ifazility.com/optdesk/Admin/WorkStationBook'))
 time.sleep(2)
 # Find the date field element by its ID
 state_date = driver.find_element(By.ID, 'searchfromdate')
