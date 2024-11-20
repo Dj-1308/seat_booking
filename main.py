@@ -80,6 +80,8 @@ print("text_start_data:",start_date)
 print("text_tomorrow_data:",tomorrow_date)
 print("text_end_data:",end_date)
 
+# Identify the JavaScript function and its parameters
+function_name = "checkbookingstatus_greyred"
 # Find the elements and get their values
 starttime_element = driver.find_element(By.ID,"dtsearchfrom")
 starttime = starttime_element.get_attribute("value")
