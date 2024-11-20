@@ -1,22 +1,22 @@
+
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
 
-
-driver = webdriver.Chrome()
-
-driver.get("http://selenium.dev")
-
-driver.quit()
-from selenium import webdriver
 from datetime import datetime, timedelta
+import time
+
 from selenium.webdriver.common.keys import Keys
-#from selenium.webdriver.chrome.service import Service as ChromeService
-#from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
-import time
 
+options = webdriver.ChromeOptions()
+options.add_experimental_option("detach", True)
+driver = webdriver.Chrome(options=options)
+
+############################################################
+#driver.get("https://www.google.co.in/")
 
 # Replace these with your actual username and password
 username = "deept@synopsys.com"
@@ -25,15 +25,10 @@ password = "Deepanraj@13"
 # Replace this with the URL of the website you want to login to
 website_url = "https://ifazility.com/Optdesk/Account/Login"
 
-# Path to your webdriver executable
-#webdriver_path = "C:\Users\Public\Desktop"
-
-# Initialize the webdriver
-driver = webdriver.Chrome()
+#open the website
+driver.get(website_url)
 driver.implicitly_wait(5)
 
-# Open the website
-driver.get(website_url)
 # Find the login form elements and fill them in
 username_field = driver.find_element(By.ID, "txtUserName")
 username_field.send_keys(username)
@@ -48,8 +43,12 @@ password_field.send_keys(Keys.RETURN)
 time.sleep(2)
 booking_url = "https://ifazility.com/optdesk/Admin/WorkStationBook"
 driver.get(booking_url)
+
 # Wait for a few seconds to let the page load
 time.sleep(2)
+
+############################################################
+
 # Find the date field element by its ID
 state_date = driver.find_element(By.ID, 'searchfromdate')
 # Calculate tomorrow's date
@@ -70,6 +69,7 @@ select.select_by_value("10:40:00")
 #clicking the select button
 submit_button = driver.find_element(By.ID, 'btnsearch')
 submit_button.click()
+
 #1041 1437 cubicl ws-151
 # Set the desired values for X1 and Y1
 new_x1_value = "1172"
@@ -78,6 +78,7 @@ x1_values = driver.find_element(By.ID, 'X1')
 y1_values = driver.find_element(By.ID, 'Y1')
 driver.execute_script("document.getElementById('X1').value = '{}'".format(new_x1_value))
 driver.execute_script("document.getElementById('Y1').value = '{}'".format(new_y1_value))
+
 # Identify the JavaScript function and its parameters
 function_name = "checkbookingstatus_greyred"
 # Find the elements and get their values
@@ -115,3 +116,4 @@ error_message = "successfully booked the 158 cubical to you please cross check o
 #send_email("Cubical booking success Notification", error_message)
 time.sleep(50)
 # Close the browser
+driver.quit()
