@@ -3,7 +3,7 @@ name: Run Python examples
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 50 * * *'
+    - cron: '20 18 * * *'
 env:
   DISPLAY: :99
   GITHUB_TOKEN: ${{ secrets.SELENIUM_CI_TOKEN }}
