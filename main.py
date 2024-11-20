@@ -98,21 +98,3 @@ enddate = enddate_element.get_attribute("value")
 new_x2_value =0
 new_y2_value =0
 # Execute the JavaScript function using Selenium
-driver.execute_script(f"{function_name}({new_x1_value},{new_x2_value}, {new_y1_value},{new_y2_value}, '{date}', '{enddate}', '{starttime}', '{endtime}')")
-time.sleep(5)
-# Find the dropdown element by its ID
-dropdown_1 = driver.find_element(By.ID,"tmestart")
-# Create a Select object from the dropdown element
-select_1 = Select(dropdown_1)
-#Select by value
-select_1.select_by_value("10:40:00")
-save_button = driver.find_element(By.XPATH, "//button[contains(@onclick, 'saveworkstation')]")
-# Click the "Save" button
-save_button.click()
-time.sleep(10)
-confirm_button = driver.find_element(By.XPATH, "//button[text()='Click to Confirm']")
-# Click the "Click to Confirm" button
-confirm_button.click()
-error_message = "successfully booked the 158 cubical to you please cross check once."
-#send_email("Cubical booking success Notification", error_message)
-time.sleep(50)
