@@ -72,12 +72,12 @@ submit_button.click()
 
 #1041 1437 cubicl ws-151
 # Set the desired values for X1 and Y1
-new_x1_value = "1172"
-new_y1_value = "1583"
+#new_x1_value = "1172"
+#new_y1_value = "1583"
 
 #cube no 151
-#new_x1_value = "1070"
-#new_y1_value = "1429"
+new_x1_value = "1070"
+new_y1_value = "1429"
 
 x1_values = driver.find_element(By.ID, 'X1')
 y1_values = driver.find_element(By.ID, 'Y1')
