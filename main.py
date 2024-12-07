@@ -113,10 +113,12 @@ select_1 = Select(dropdown_1)
 select_1.select_by_value("10:40:00")
 save_button = driver.find_element(By.XPATH, "//button[contains(@onclick, 'saveworkstation')]")
 # Click the "Save" button
+time.sleep(10)
 save_button.click()
 time.sleep(10)
 confirm_button = driver.find_element(By.XPATH, "//button[text()='Click to Confirm']")
 # Click the "Click to Confirm" button
+time.sleep(10)
 confirm_button.click()
 error_message = "successfully booked the 158 cubical to you please cross check once."
 #send_email("Cubical booking success Notification", error_message)
