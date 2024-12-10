@@ -52,7 +52,7 @@ time.sleep(10)
 # Find the date field element by its ID
 state_date = driver.find_element(By.ID, 'searchfromdate')
 # Calculate tomorrow's date
-tomorrow = datetime.now() + timedelta(days=6)
+tomorrow = datetime.now() + timedelta(days=7)
 tomorrow_date = tomorrow.strftime('%m/%d/%Y')  # Format as MM/DD/YYYY
 # Update the value of the date field with tomorrow's date
 driver.execute_script("arguments[0].setAttribute('value', arguments[1])", state_date, tomorrow_date)
@@ -73,12 +73,12 @@ submit_button.click()
 #1041 1437 cubicl ws-151
 # Set the desired values for X1 and Y1
 #cube no 158
-#new_x1_value = "1172"
-#new_y1_value = "1583"
+new_x1_value = "1172"
+new_y1_value = "1583"
 
 #cube no 151
-new_x1_value = "1070"
-new_y1_value = "1429"
+#new_x1_value = "1070"
+#new_y1_value = "1429"
 
 x1_values = driver.find_element(By.ID, 'X1')
 y1_values = driver.find_element(By.ID, 'Y1')
